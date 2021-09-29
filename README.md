@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/Node.js-14.16.6-43895D?style=for-the-badge&logo=Node.js"
          alt="Node.js">
           </a>
-  <a href="https://mysql.com/">
+  <a href="https://www.postgresql.org/">
     <img src="https://img.shields.io/badge/PostgreSQL-13.4-008bb9?style=for-the-badge&logo=PostgreSQL"
          alt="PostgreSQL">
           </a>
