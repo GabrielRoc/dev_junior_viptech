@@ -1,0 +1,144 @@
+{
+    "tables": {
+        "TB_Pedido": {
+            "tableName": "TB_Pedido",
+            "schema": {
+                "ID_Pedido": {
+                    "autoIncrement": true,
+                    "unique": true,
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "ID_Pedido",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "Data_Pedido": {
+                    "allowNull": false,
+                    "field": "Data_Pedido",
+                    "seqType": "Sequelize.DATE"
+                },
+                "Forma_Pagamento": {
+                    "allowNull": false,
+                    "field": "Forma_Pagamento",
+                    "seqType": "Sequelize.STRING"
+                },
+                "Data_Entrega_Prevista": {
+                    "allowNull": false,
+                    "field": "Data_Entrega_Prevista",
+                    "seqType": "Sequelize.DATE"
+                },
+                "Data_Entrega_Efetivada": {
+                    "allowNull": true,
+                    "field": "Data_Entrega_Efetivada",
+                    "seqType": "Sequelize.DATE"
+                },
+                "ID_Cliente": {
+                    "allowNull": false,
+                    "field": "ID_Cliente",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "created_at": {
+                    "allowNull": false,
+                    "field": "created_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updated_at": {
+                    "allowNull": false,
+                    "field": "updated_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deleted_at": {
+                    "field": "deleted_at",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "TB_Produto": {
+            "tableName": "TB_Produto",
+            "schema": {
+                "ID_Produto": {
+                    "autoIncrement": true,
+                    "unique": true,
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "field": "ID_Produto",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "Nome_Produto": {
+                    "allowNull": false,
+                    "field": "Nome_Produto",
+                    "seqType": "Sequelize.STRING"
+                },
+                "Tamanho_Produto": {
+                    "allowNull": false,
+                    "field": "Tamanho_Produto",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "Cor": {
+                    "allowNull": false,
+                    "field": "Cor",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "Valor": {
+                    "allowNull": false,
+                    "field": "Valor",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "created_at": {
+                    "allowNull": false,
+                    "field": "created_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updated_at": {
+                    "allowNull": false,
+                    "field": "updated_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "deleted_at": {
+                    "field": "deleted_at",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "REL_Itens": {
+            "tableName": "REL_Itens",
+            "schema": {
+                "created_at": {
+                    "allowNull": false,
+                    "field": "created_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updated_at": {
+                    "allowNull": false,
+                    "field": "updated_at",
+                    "seqType": "Sequelize.DATE"
+                },
+                "ID_Pedido": {
+                    "primaryKey": true,
+                    "references": {
+                        "model": "TB_Pedido",
+                        "key": "ID_Pedido"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "field": "ID_Pedido",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "ID_Produto": {
+                    "primaryKey": true,
+                    "references": {
+                        "model": "TB_Produto",
+                        "key": "ID_Produto"
+                    },
+                    "onDelete": "CASCADE",
+                    "onUpdate": "CASCADE",
+                    "field": "ID_Produto",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
